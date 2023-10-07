@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <div class="body-calculator">
+        <div class="display">
+            <div class="prev-display" data-prev-operand></div>
+            <div class="current-display" data-current-operand></div>
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-all-clear" data-all-clear>AC</button> 
+            <button class="btn btn-delete" data-delete>
+                <i class="fa-solid fa-delete-left"></i>
+            </button>
+            <button class="btn btn-operator" data-operation>%</button>
+            <button class="btn btn-operator" data-operation>÷</button>
+
+            <button class="btn btn-number" data-number>7</button>
+            <button class="btn btn-number" data-number>8</button>
+            <button class="btn btn-number" data-number>9</button>
+            <button class="btn btn-operator" data-operation>×</button>
+
+            <button class="btn btn-number" data-number>4</button>
+            <button class="btn btn-number" data-number>5</button>
+            <button class="btn btn-number" data-number>6</button>
+            <button class="btn btn-operator" data-operation>-</button>
+
+            <button class="btn btn-number" data-number>1</button>
+            <button class="btn btn-number" data-number>2</button>
+            <button class="btn btn-number" data-number>3</button>
+            <button class="btn btn-operator" data-operation>+</button>
+
+            <button class="btn btn-number" data-number>0</button>
+            <button class="btn btn-number" data-number>.</button>
+            <button class="btn btn-equal" data-equals>=</button>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><script>document.write(new Date().getFullYear())</script>
+             &copy
+            <a href="https://github.com/ainacodes" target="_blank">
+                ainacodes
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
