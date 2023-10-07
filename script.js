@@ -36,3 +36,25 @@ function setOperation(operation) {
   currentDisplay.textContent += operation;
   prevDisplay.textContent = currentDisplay.textContent;
 }
+
+function evaluate() {
+  let result;
+  switch (operation) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '×':
+      result = num1 * num2;
+      break;
+    case '÷':
+      result = num1 / num2;
+      break;
+    default:
+      return;
+  }
+}
+
+function operate() {}
