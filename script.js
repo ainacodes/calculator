@@ -1,3 +1,7 @@
+let num1 = null;
+let num2 = null;
+let currentOperation = null;
+
 const prevDisplay = document.querySelector('[data-prev-operand]');
 const currentDisplay = document.querySelector('[data-current-operand]');
 const numberButtons = document.querySelectorAll('[data-number');
@@ -19,6 +23,23 @@ allClearButton.addEventListener('click', () => {
   currentDisplay.textContent = '';
 });
 
+deleteButton.addEventListener('click', () => {
+  currentDisplay.textContent = currentDisplay.textContent
+    .toString()
+    .slice(0, -1);
+});
+
+equalsButton.addEventListener('click', () => {
+  if (num1 !== null && num2 === null) {
+    num2 = parseFloat(currentDisplay.textContent);
+    operate(currentOperation, num1, num2);
+    prevDisplay.textContent = '';
+    num1 = parseFloat(prevDisplay.textContent);
+    num2 = null;
+    currentOperation = null;
+  }
+});
+
 function appendNumber(number) {
   if (currentDisplay.textContent.includes('.')) {
     if (/^\d$/.test(number)) {
@@ -33,11 +54,24 @@ function appendNumber(number) {
 
 function setOperation(operation) {
   if (currentDisplay.textContent === '') return;
-  currentDisplay.textContent += operation;
-  prevDisplay.textContent = currentDisplay.textContent;
+
+  if (num1 === null) {
+    num1 = currentDisplay.textContent;
+    currentOperation = operation;
+    prevDisplay.textContent = `${num1} ${operation}`;
+    currentDisplay.textContent = '';
+  } else if (num1 !== null && num2 === null) {
+    num2 = currentDisplay.textContent;
+    operate(currentOperation, num1, num2);
+    currentOperation = operation;
+    prevDisplay.textContent += ` ${num2} ${operation}`;
+    currentDisplay.textContent = '';
+    num1 = prevDisplay.textContent;
+    num2 = null;
+  }
 }
 
-function evaluate() {
+function operate(operation, num1, num2) {
   let result;
   switch (operation) {
     case '+':
@@ -50,11 +84,13 @@ function evaluate() {
       result = num1 * num2;
       break;
     case '÷':
+      if (num2 === 0) {
+        ('Error: Division by zero');
+      }
       result = num1 / num2;
       break;
     default:
-      return;
+      'Error: Invalid operator';
   }
+  return (currentDisplay.textContent = result);
 }
-
-function operate() {}

@@ -10,7 +10,12 @@ Live preview [here](https://ainacodes.github.io/calculator/)
 
 - [x] Design
 - [x] Show the numbers on the display when the button is clicked
-- [ ] Move the number to previous display when the button operation is clicked
-- [ ] Empty out the currrent display
-- [ ] add operation function
+- [x] Move the number to previous display when the button operation is clicked
+- [x] Delete last digit from the current display
+- [x] add operation function
 - [ ] add keyboard support
+
+### Need to work
+
+- [ ] The add function didn't work
+- [ ] Only accept one operation. Then the display will be NaN. Need to refresh the browser.
